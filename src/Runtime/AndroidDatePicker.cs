@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-// public delegate void ResponseDelegate();
 public class AndroidDatePicker : IDatePicker
 {
     private Action<DateTime> _dateSelectedCallback;

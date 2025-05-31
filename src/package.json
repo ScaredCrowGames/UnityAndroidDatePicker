@@ -1,7 +1,7 @@
 {
   "name": "com.scaredcrowgames.androiddatepicker",
   "version": "1.0.0",
-  "displayName": "Android Native Date Picker",
+  "displayName": "Android Date Picker",
   "description": "Android native date picker for Unity",
   "unity": "2021.3",
   "author": {
@@ -15,7 +15,7 @@
   "samples": [
     {
       "displayName": "Android Date Picker Demo",
-      "description": "A sample scene showing how to use the date picker",
+      "description": "A sample scene and script showing how to use the date picker",
       "path": "Samples~"
     }
   ]

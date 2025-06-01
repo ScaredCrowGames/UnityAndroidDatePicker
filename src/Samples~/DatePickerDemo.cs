@@ -8,22 +8,22 @@ public class DatePickerDemo : MonoBehaviour
     [SerializeField] private Text _buttonText;
     [SerializeField] private Button _button;
 
-    private IDatePicker _calendar;
+    private IDatePicker _datePicker;
 
     private void Start()
     {
         _button.onClick.AddListener(OnDateButtonClicked);
 
 #if UNITY_EDITOR
-        _calendar = new UnityEditorCalendar();
+        _datePicker = new UnityEditorCalendar();
 #elif UNITY_ANDROID
-        _calendar = new AndroidDatePicker();
+        _datePicker = new AndroidDatePicker();
 #endif
     }
 
     private void OnDateButtonClicked()
     {
-        _calendar?.Show(DateTime.Now, OnDateSelected);
+        _datePicker?.Show(DateTime.Now, OnDateSelected);
     }
 
     private void OnDateSelected(DateTime value)

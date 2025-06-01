@@ -1,0 +1,16 @@
+{
+    "name": "AndroidDatePicker.Samples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c54de39d4d7eb0d419870917b4ff0342"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

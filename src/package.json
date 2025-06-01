@@ -1,0 +1,22 @@
+{
+  "name": "com.scaredcrowgames.androiddatepicker",
+  "version": "1.0.0",
+  "displayName": "Android Date Picker",
+  "description": "Android native date picker for Unity",
+  "unity": "2021.3",
+  "author": {
+    "name": "Scared Crow Games",
+    "email": "scared.crow.games.official@gmail.com"
+  },
+  "keywords": ["android", "native", "date", "picker"],
+"documentationUrl": "https://github.com/ScaredCrowGames/UnityAndroidDatePicker",
+"changelogUrl": "https://github.com/ScaredCrowGames/UnityAndroidDatePicker/releases",
+"licensesUrl": "https://github.com/ScaredCrowGames/UnityAndroidDatePicker/blob/main/LICENSE",
+  "samples": [
+    {
+      "displayName": "Android Date Picker Demo",
+      "description": "A sample scene and script showing how to use the date picker",
+      "path": "Samples~"
+    }
+  ]
+}

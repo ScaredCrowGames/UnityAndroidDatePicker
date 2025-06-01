@@ -1,4 +1,4 @@
-# Android Date Picker for Unity
+# Android native Date Picker for Unity
 
 ## Table of Contents
 - [Installation](#installation)
@@ -25,16 +25,16 @@ https://github.com/scaredcrowgames/androiddatepicker.git?path=src
 ```csharp
 public class DatePickerDemo : MonoBehaviour
 {
-    private IDatePicker _calendar;
+    private IDatePicker _datePicker;
 
     private void Start()
     {
 #if UNITY_EDITOR
-        _calendar = new UnityEditorDatePicker();
+        _datePicker = new UnityEditorDatePicker();
 #elif UNITY_ANDROID
-        _calendar = new AndroidDatePicker();
+        _datePicker = new AndroidDatePicker();
 #endif
-        _calendar?.Show(DateTime.Now, OnDateSelected);
+        _datePicker?.Show(DateTime.Now, OnDateSelected);
     }
 
     private void OnDateSelected(DateTime value)

@@ -1,6 +1,9 @@
 using System;
 
-public interface IDatePicker
+namespace DatePicker
 {
-    void Show(DateTime initDate, Action<DateTime> callback);
+    public interface IDatePicker
+    {
+        void Show(DateTime initDate, Action<DateTime> callback);
+    }
 }

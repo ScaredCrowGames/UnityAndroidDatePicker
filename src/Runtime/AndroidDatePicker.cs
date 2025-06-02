@@ -1,47 +1,52 @@
 using System;
 using UnityEngine;
 
-public class AndroidDatePicker : IDatePicker
+namespace DatePicker
 {
-    private Action<DateTime> _dateSelectedCallback;
-    private DateTime _initDate;
-
-    public void Show(DateTime initDate, Action<DateTime> callback)
+#if UNITY_ANDROID
+    public class AndroidDatePicker : IDatePicker
     {
-        _initDate = initDate;
-        _dateSelectedCallback = callback;
+        private Action<DateTime> _dateSelectedCallback;
+        private DateTime _initDate;
 
-        var unityActivity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-        var activity = unityActivity.GetStatic<AndroidJavaObject>("currentActivity");
+        public void Show(DateTime initDate, Action<DateTime> callback)
+        {
+            _initDate = initDate;
+            _dateSelectedCallback = callback;
 
-        activity.Call("runOnUiThread",
-            new AndroidJavaRunnable(() =>
+            var unityActivity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            var activity = unityActivity.GetStatic<AndroidJavaObject>("currentActivity");
+
+            activity.Call("runOnUiThread",
+                new AndroidJavaRunnable(() =>
+                {
+                    new AndroidJavaObject("android.app.DatePickerDialog", activity, new DateCallback(this),
+                        _initDate.Year, _initDate.Month - 1, _initDate.Day).Call("show");
+                }));
+        }
+
+        private void DateSelectedHandler(DateTime date)
+        {
+            _dateSelectedCallback?.Invoke(date);
+        }
+
+
+        class DateCallback : AndroidJavaProxy
+        {
+            private AndroidDatePicker mDialog;
+
+            public DateCallback(AndroidDatePicker d) : base("android.app.DatePickerDialog$OnDateSetListener")
             {
-                new AndroidJavaObject("android.app.DatePickerDialog", activity, new DateCallback(this),
-                    _initDate.Year, _initDate.Month - 1, _initDate.Day).Call("show");
-            }));
-    }
+                mDialog = d;
+            }
 
-    private void DateSelectedHandler(DateTime date)
-    {
-        _dateSelectedCallback?.Invoke(date);
-    }
+            private void onDateSet(AndroidJavaObject view, int year, int monthOfYear, int dayOfMonth)
+            {
+                var selectedDate = new DateTime(year, monthOfYear + 1, dayOfMonth);
 
-
-    class DateCallback : AndroidJavaProxy
-    {
-        private AndroidDatePicker mDialog;
-
-        public DateCallback(AndroidDatePicker d) : base("android.app.DatePickerDialog$OnDateSetListener")
-        {
-            mDialog = d;
-        }
-
-        private void onDateSet(AndroidJavaObject view, int year, int monthOfYear, int dayOfMonth)
-        {
-            var selectedDate = new DateTime(year, monthOfYear + 1, dayOfMonth);
-
-            mDialog.DateSelectedHandler(selectedDate);
+                mDialog.DateSelectedHandler(selectedDate);
+            }
         }
     }
+#endif
 }

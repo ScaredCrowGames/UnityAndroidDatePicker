@@ -9,7 +9,7 @@
 
 1. Use the Package Manager:
 
-Window > Package Manager > Add package from git url...
+Window > Package Manager > Install package from git URL...
 ```link
 https://github.com/scaredcrowgames/androiddatepicker.git?path=src
 ```

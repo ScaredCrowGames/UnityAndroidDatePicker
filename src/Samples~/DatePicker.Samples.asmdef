@@ -1,6 +1,6 @@
 {
     "name": "AndroidDatePicker.Samples",
-    "rootNamespace": "",
+    "rootNamespace": "DatePicker",
     "references": [
         "GUID:c54de39d4d7eb0d419870917b4ff0342"
     ],

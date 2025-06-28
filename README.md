@@ -19,6 +19,7 @@ https://github.com/scaredcrowgames/androiddatepicker.git?path=src
 ```json
 "com.scaredcrowgames.androiddatepicker": "https://github.com/scaredcrowgames/androiddatepicker.git?path=src"
 ```
+3. Get it from [Unity Asset Store](https://assetstore.unity.com/packages/tools/utilities/native-mobile-date-picker-322280)
 
 ## How to use
 

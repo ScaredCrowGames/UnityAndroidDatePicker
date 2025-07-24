@@ -59,4 +59,4 @@ public class DatePickerDemo : MonoBehaviour
 
 ## Contact us
 > [!TIP]
-> All discussions, requests and bug reports can be left in the corresponding [Discord channel](https://discord.gg/rh5ZQmHWap) or here in Discussions
+> All discussions, requests and bug reports can be left in the corresponding [Discord channel](https://discord.gg/aQt9aEwsMk) or here in Discussions

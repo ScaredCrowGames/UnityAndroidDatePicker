@@ -19,7 +19,7 @@ namespace DatePicker.Samples
 #if UNITY_EDITOR
             _datePicker = new UnityEditorCalendar();
 #elif UNITY_ANDROID
-        _datePicker = new DatePicker.AndroidDatePicker();
+            _datePicker = new DatePicker.AndroidDatePicker();
 #endif
         }
 

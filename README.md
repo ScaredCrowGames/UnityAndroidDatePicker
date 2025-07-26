@@ -4,6 +4,7 @@
 - [Installation](#installation)
 - [How to use](#how-to-use)
 - [Contact us](#contact-us)
+- [Related repositories](#related-repositories)
 
 ## Installation
 
@@ -60,3 +61,8 @@ public class DatePickerDemo : MonoBehaviour
 ## Contact us
 > [!TIP]
 > All discussions, requests and bug reports can be left in the corresponding [Discord channel](https://discord.gg/VKgbqUyz5a) or here in Discussions
+
+## Related repositories
+Here are some related projects you might find useful:
+- [Android option picker](https://github.com/ScaredCrowGames/UnityAndroidOptionPicker) – Native Android option picker for Unity
+- [Android time picker](https://github.com/ScaredCrowGames/UnityAndroidTimePicker) – Native Android time picker for Unity
